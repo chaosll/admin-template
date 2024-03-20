@@ -88,7 +88,8 @@ const defaultResponseInterceptors = (response: AxiosResponse<any>) => {
   } else if (response.data.code === config.code) {
     return response.data
   } else {
-    ElMessage.error(response.data.message)
+    return response
+    // ElMessage.error(response.data.message)
   }
 }
 ;(error: AxiosError) => {
